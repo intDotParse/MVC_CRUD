@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MVC_CRUD.Models.User>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "All Users";
+}
+<h2>Registered users</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Userid</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserId</td>
+                <td>@user.Name</td>
+                <td>@user.Address</td>
+                <td><a href="#" class="text-info">Edit</a></td>
+                <td><a href="#" class="text-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
